@@ -21,7 +21,7 @@ try:
     # 테스트 그래프
     fig, ax = plt.subplots()
     ax.plot([1, 2, 3], [5, 2, 7])
-    ax.set_title("🌟 질량에 따른 중심의 이동")
+    ax.set_title(" 질량에 따른 중심의 이동")
     ax.set_xlabel("시간")
     ax.set_ylabel("위치")
     st.pyplot(fig)
@@ -29,7 +29,7 @@ try:
 except Exception as e:
     st.error(f"❌ 폰트 적용 실패: {e}")
 # 제목
-st.title("⚖️ 질량중심법칙 시뮬레이션")
+st.title(" 질량중심법칙 시뮬레이션")
 
 st.markdown("""
 두 물체가 서로 끌어당기며 공전할 때, 그 중심은 어디일까요?
