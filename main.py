@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
 # GitHub에 업로드한 나눔고딕 폰트 경로
-font_path = './NanumGothic.ttf'  # 같은 폴더에 있는 경우
+font_path = 'NanumGothic.ttf'  # 같은 폴더에 있는 경우
 fontprop = fm.FontProperties(fname=font_path)
 
 # matplotlib에 한글 폰트 적용
