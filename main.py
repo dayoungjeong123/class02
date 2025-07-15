@@ -1,15 +1,33 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
+import os
 
-# GitHub에 업로드한 나눔고딕 폰트 경로
-font_path = 'NanumGothic.ttf'  # 같은 폴더에 있는 경우
-fontprop = fm.FontProperties(fname=font_path)
+st.title("⚖️ 질량중심 시뮬레이션 (한글 확인용)")
 
-# matplotlib에 한글 폰트 적용
-plt.rc('font', family=fontprop.get_name())
-plt.rcParams['axes.unicode_minus'] = False  # 마이너스 깨짐 방지
+# 폰트 경로 설정
+font_path = "NanumGothic.ttf"
 
+# 현재 폴더 파일 확인
+st.subheader("📂 현재 폴더 파일 목록:")
+st.write(os.listdir())
+
+# 폰트 적용
+try:
+    fontprop = fm.FontProperties(fname=font_path)
+    plt.rc('font', family=fontprop.get_name())
+    plt.rcParams['axes.unicode_minus'] = False
+
+    # 테스트 그래프
+    fig, ax = plt.subplots()
+    ax.plot([1, 2, 3], [3, 5, 2])
+    ax.set_title("🌟 질량에 따른 중심의 이동")
+    ax.set_xlabel("시간")
+    ax.set_ylabel("위치")
+    st.pyplot(fig)
+
+except Exception as e:
+    st.error(f"❌ 폰트 로딩 실패: {e}")
 # 제목
 st.title("⚖️ 질량중심법칙 시뮬레이션")
 
