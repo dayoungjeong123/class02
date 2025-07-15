@@ -1,5 +1,14 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+
+# GitHub에 업로드한 나눔고딕 폰트 경로
+font_path = './NanumGothic.ttf'  # 같은 폴더에 있는 경우
+fontprop = fm.FontProperties(fname=font_path)
+
+# matplotlib에 한글 폰트 적용
+plt.rc('font', family=fontprop.get_name())
+plt.rcParams['axes.unicode_minus'] = False  # 마이너스 깨짐 방지
 
 # 제목
 st.title("⚖️ 질량중심법칙 시뮬레이션")
