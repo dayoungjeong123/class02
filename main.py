@@ -3,12 +3,6 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import os
 
-st.title("⚖️ 질량중심 시뮬레이션 (한글 폰트 테스트 최종)")
-
-# 현재 폴더 확인
-st.subheader("📂 현재 폴더 파일 목록:")
-st.write(os.listdir())
-
 # 폰트 경로
 font_path = "NanumGothic.ttf"
 
@@ -17,14 +11,6 @@ try:
     fm.fontManager.addfont(font_path)
     plt.rc('font', family='NanumGothic')
     plt.rcParams['axes.unicode_minus'] = False
-
-    # 테스트 그래프
-    fig, ax = plt.subplots()
-    ax.plot([1, 2, 3], [5, 2, 7])
-    ax.set_title(" 질량에 따른 중심의 이동")
-    ax.set_xlabel("시간")
-    ax.set_ylabel("위치")
-    st.pyplot(fig)
 
 except Exception as e:
     st.error(f"❌ 폰트 적용 실패: {e}")
