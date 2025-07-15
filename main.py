@@ -45,7 +45,7 @@ ax.plot(barycenter, 0, 'r*', markersize=20)
 
 ax.text(pos1, 0.1, f"A (질량={mass1}kg)", ha='center')
 ax.text(pos2, 0.1, f"B (질량={mass2}kg)", ha='center')
-ax.text(barycenter, -0.2, "⚖️ 질량중심", ha='center', color='red')
+ax.text(barycenter, -0.2, "질량중심", ha='center', color='red')
 
 ax.set_xlim(-2, distance + 2)
 ax.set_ylim(-1, 1)
