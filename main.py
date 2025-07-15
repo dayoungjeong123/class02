@@ -3,31 +3,31 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import os
 
-st.title("⚖️ 질량중심 시뮬레이션 (한글 확인용)")
+st.title("⚖️ 질량중심 시뮬레이션 (한글 폰트 테스트 최종)")
 
-# 폰트 경로 설정
-font_path = "NanumGothic.ttf"
-
-# 현재 폴더 파일 확인
+# 현재 폴더 확인
 st.subheader("📂 현재 폴더 파일 목록:")
 st.write(os.listdir())
 
-# 폰트 적용
+# 폰트 경로
+font_path = "NanumGothic.ttf"
+
 try:
-    fontprop = fm.FontProperties(fname=font_path)
-    plt.rc('font', family=fontprop.get_name())
+    # 폰트를 직접 등록하고 이름 강제 지정
+    fm.fontManager.addfont(font_path)
+    plt.rc('font', family='NanumGothic')
     plt.rcParams['axes.unicode_minus'] = False
 
     # 테스트 그래프
     fig, ax = plt.subplots()
-    ax.plot([1, 2, 3], [3, 5, 2])
+    ax.plot([1, 2, 3], [5, 2, 7])
     ax.set_title("🌟 질량에 따른 중심의 이동")
     ax.set_xlabel("시간")
     ax.set_ylabel("위치")
     st.pyplot(fig)
 
 except Exception as e:
-    st.error(f"❌ 폰트 로딩 실패: {e}")
+    st.error(f"❌ 폰트 적용 실패: {e}")
 # 제목
 st.title("⚖️ 질량중심법칙 시뮬레이션")
 
